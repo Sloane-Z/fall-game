@@ -1,4 +1,6 @@
-# Falling Ball Game
+## Falling Ball Game
 HTML, css, Javascript
-# Site Link
+### Instructions
+Use ArrowKeys(Left and Right) to make movement
+### Site Link
 https://fall-game-lovat.vercel.app
