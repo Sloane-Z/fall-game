@@ -3,6 +3,61 @@
   margin: 0;
 }
 
+
+
+/* Spinning the sphere using key frames */
+@-ms-keyframes spinToRight {
+  from { -ms-transform: rotate(0deg); }
+  to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spinToRight {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+@keyframes spinToRight {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@-webkit-keyframes spinToRight {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+
+@-ms-keyframes spinToLeft {
+  from { -ms-transform: rotate(0); }
+  to { -ms-transform: rotate(-360deg); }
+}
+@-moz-keyframes spinToLeft {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(-360deg); }
+}
+@keyframes spinToLeft {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+@-webkit-keyframes spinToLeft {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(-360deg); }
+}
+
+/* Move sphere from left to right */
+@-moz-keyframes moveLeftToRight {
+  0%   { left: -100px; }
+  100% { left: 100%; }
+}
+@-ms-keyframes moveLeftToRight {
+  0%   { left: -100px; }
+  100% { left: 100%; }
+}
+@keyframes moveLeftToRight {
+  0%   { left: -100px; }
+  100% { left: 100%; }
+}
+@-webkit-keyframes moveLeftToRight {
+  0%   { left: -100px; }
+  100% { left: 100%; }
+}
+
 #game{
   width: 400px;
   height: 500px;
@@ -11,15 +66,43 @@
 }
 
 #character{
-  width: 20px;
-  height: 20px;
-  background-color: red;
+  /*Size*/
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  position: relative;
 
+  /* Position */
+  position: relative;
   top: 400px;
   left: 190px;
   z-index: 100000;
+
+  /* Style */
+  background: radial-gradient(circle at 65% 15%, white 1px, aqua 3%, darkblue 60%, aqua 100%);  
+
+
+}
+
+.leftAnim{
+  /* Animation */
+
+  animation: spinToLeft 1000ms linear infinite;
+  -webkit-animation: spinToLeft 1000ms linear infinite;
+  -moz-animation: spinToLeft 1000ms linear infinite;
+  -ms-animation: spinToLeft 1000ms linear infinite;
+} 
+
+.rightAnim{
+  /* Animation */
+
+  animation: spinToRight 1000ms linear infinite;
+  -webkit-animation: spinToRight 1000ms linear infinite;
+  -moz-animation: spinToRight 1000ms linear infinite;
+  -ms-animation: spinToRight 1000ms linear infinite;
+}
+
+.animState{
+  animation-play-state: paused;
 }
 
 .block{

@@ -7,15 +7,17 @@ var currentBlocks = [];
 
 function moveLeft(){
     var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
-    if(left>0){
-        character.style.left = left - 2 + "px";
+    if(left > 0){
+        character.style.left = left - 1 + "px";
+
     }
 }
 
 function moveRight(){
     var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
-    if(left<380){
+    if(left < 380){
         character.style.left = left + 2 + "px";
+
     }
 }
 
@@ -24,9 +26,11 @@ document.addEventListener("keydown", event => {
         both++;
         if(event.key==="ArrowLeft"){
             interval = setInterval(moveLeft, 1);
+            document.getElementById("character").classList.toggle("leftAnim");
         }
         if(event.key==="ArrowRight"){
             interval = setInterval(moveRight, 1);
+            document.getElementById("character").classList.toggle("rightAnim");
         }
     }
 });
@@ -34,6 +38,14 @@ document.addEventListener("keydown", event => {
 document.addEventListener("keyup", event => {
     clearInterval(interval);
     both=0;
+
+    if (event.key == "ArrowLeft"){
+      document.getElementById("character").classList.toggle("leftAnim");
+    }
+    else if (event.key == "ArrowRight"){
+      document.getElementById("character").classList.toggle("rightAnim");
+    }
+
 });
 
 var blocks = setInterval(function(){
